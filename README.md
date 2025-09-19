@@ -24,74 +24,106 @@ Testing the webserver.
 """ 
 from http.server import HTTPServer, BaseHTTPRequestHandler
 
-content =  '''<html>
+content =  """
+from http.server import HTTPServer, BaseHTTPRequestHandler
+
+content = '''
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<h1>EXPERIMENT NUMBER 1</h1>
-<h2>roll number:25014181</h2>
-<h2>Name: LOGESHWARI N</h2>
-<title>TABLE</title>
-<style>
-  table{
-    border:2px solid black;
-    boder-collapse:collapse;
-    width: 60%;}
-  th ,td {
-    border: 1px solid black;
-    padding: 8px;
-    text-align: center;}
-  th{
-    background-color: "cyan";}
-</style>
+    <meta charset="UTF-8">
+    <title>TCP/IP Protocol suite</title>
+    <style>
+        body {
+            font-family: arial, sans-serif;
+            background:#78df0a;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom:10px;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        .model, .protocol {
+            border: 2px solid #7323a2;
+            border-radius:5px;
+            margin: 10px 0;
+            padding: 10px;
+            background:#99ffb4;
+            width:300px;
+        }
+        .layer{
+            background:#42187a;
+            border: 10px solid #000;
+            border-radius:10px 0;
+            padding: 10px;
+            font-weight: bold;
+        }
+        .protocol-section{
+            margin:10 px;
+            padding: 8px;
+        }
+        .protocol-section h3{
+            margin:5px 0;
+            font-size:16px;
+        }
+        .box{
+            display: inline-block;
+            background:#042a51;
+            color:#e50822;
+            padding: 6px, 10px;
+            margin: 4px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .transport.box {background: #336600;}
+        .internet.box {background: #333399;}
+        .network.box {background: #cc3300;}
+    </style>
 </head>
 <body>
-   <table>
-     <tr>
-     <th>s.no</th>
-     <th>Name</th>
-     <th>sem 1</th>
-     <th>sem 2</th>
-     <th>percentage</th>
-     </tr>
-     <tr>
-     <td>1</td>
-     <td>Mithra</td>
-     <td>98</td>
-     <td>88</td>
-     <td>93%</td>
-     </tr>
-     <tr>
-     <td>2</td>
-     <td>John</td>
-     <td>78</td>
-     <td>99</td>
-     <td>88.5%</td>
-     </tr>
-     <tr>
-     <td>3</td>
-     <td>Ranjini</td>
-     <td>87</td>
-     <td>79</td>
-     <td>83%</td>
-     </tr>
-     <tr>
-     <td>4</td>
-     <td>Monisha</td>
-     <td>99</td>
-     <td>95</td>
-     <td>97%</td>
-     </tr>
-     <tr>
-     <td>5</td>
-     <td>Sidhu</td>
-     <td>76</td>
-     <td>77</td>
-     <td>76.5%</td>
-     </tr>
-   </table>
+    <h2>TCP/IP Protol suite</h2>
+       <div class="container">
+        <div class="model">
+            <h3>TCP/IP Model</h3>
+            <div class="layer">Application layer</div>
+            <div class="layer">Transoport layer</div>
+            <div class="layer">Internet layer</div>
+            <div class="layer"> Network interface layer</div>
+        </div>
+        <div class="protocol"><h3>TCP/IP Protocol suite</h3>
+            <div class="protocol-section application">
+                <div class="box">HTTP</div>
+                <div class="box">FTP</div>
+                <div class="box">TFTP</div>
+                <div class="box">DNS</div>
+                <div class="box">DHCP</div>
+                <div class="box">SMTP</div>
+                <div class="box">Telnet</div>
+            </div>
+            <div class="protocol-section transport">
+                <div class="box">TCP</div>
+                <div class="box">UDP</div>
+            </div>
+            <div class="protocol-section internet">
+                <div class="box">IP</div>
+            </div>
+            <div class="protocol-section network">
+                <div class="box">Ethernet</div>
+                <div class="box">Token Ring</div>
+                <div class="box">Frame Relay</div>
+                <div class="box">ATM</div>
+            </div>
+        </div>
+    </div>
 </body>
-
-</html>'''
-
+</html>
+'''
 class MyServer(BaseHTTPRequestHandler):
     def do_GET(self):
         print("GET request received...")
@@ -108,8 +140,11 @@ httpd.serve_forever()
 
 """
 # OUTPUT:
-![alt text](<Screenshot 2025-09-19 110534.png>)
-![alt text](<Screenshot 2025-09-19 110619.png>)
+![alt text](<../Screenshot 2025-09-19 183151.png>)
+![alt text](<../Screenshot 2025-09-19 183217.png>)
+
+
+
 
 
 
